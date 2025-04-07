@@ -35,19 +35,14 @@ cd nearblocks
 bundle install
 ```
 
-3. Install JavaScript dependencies:
 
-```bash
-yarn install
-```
-
-4. Set up the database:
+3. Set up the database:
 
 ```bash
 rails db:create db:migrate
 ```
 
-5. Start the Rails server:
+4. Start the Rails server:
 
 ```bash
 rails server
