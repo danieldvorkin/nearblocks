@@ -10,8 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 0) do
+ActiveRecord::Schema[7.0].define(version: 2025_04_07_205625) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "blocks", force: :cascade do |t|
+    t.integer "height", null: false
+    t.string "block_hash", null: false
+    t.datetime "created_at", null: false
+    t.index ["block_hash"], name: "index_blocks_on_block_hash", unique: true
+    t.index ["height"], name: "index_blocks_on_height", unique: true
+  end
 
 end
