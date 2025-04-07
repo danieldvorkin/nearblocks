@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2025_04_07_205625) do
+ActiveRecord::Schema[7.0].define(version: 2025_04_07_205944) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,4 +22,15 @@ ActiveRecord::Schema[7.0].define(version: 2025_04_07_205625) do
     t.index ["height"], name: "index_blocks_on_height", unique: true
   end
 
+  create_table "transactions", force: :cascade do |t|
+    t.string "hash", null: false
+    t.string "signer_id", null: false
+    t.string "receiver_id", null: false
+    t.bigint "block_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["block_id"], name: "index_transactions_on_block_id"
+    t.index ["hash"], name: "index_transactions_on_hash", unique: true
+  end
+
+  add_foreign_key "transactions", "blocks"
 end

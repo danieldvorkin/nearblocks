@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hash: MyString
+  signer_id: MyString
+  receiver_id: MyString
+  block: one
+  created_at: 2025-04-07 16:59:44
+
+two:
+  hash: MyString
+  signer_id: MyString
+  receiver_id: MyString
+  block: two
+  created_at: 2025-04-07 16:59:44
