@@ -1,0 +1,17 @@
+current directory: /Users/danieldvorkin/Documents/Personal/nearblocks/vendor/bundle/ruby/3.1.0/gems/debug-1.10.0/ext/debug
+/Users/danieldvorkin/.rbenv/versions/3.1.4/bin/ruby -I /Users/danieldvorkin/.rbenv/versions/3.1.4/lib/ruby/3.1.0 extconf.rb
+creating Makefile
+
+current directory: /Users/danieldvorkin/Documents/Personal/nearblocks/vendor/bundle/ruby/3.1.0/gems/debug-1.10.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250407-46711-1q857y sitelibdir\=./.gem.20250407-46711-1q857y clean
+
+current directory: /Users/danieldvorkin/Documents/Personal/nearblocks/vendor/bundle/ruby/3.1.0/gems/debug-1.10.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250407-46711-1q857y sitelibdir\=./.gem.20250407-46711-1q857y
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.bundle
+ld: warning: ignoring duplicate libraries: '-lruby.3.1'
+
+current directory: /Users/danieldvorkin/Documents/Personal/nearblocks/vendor/bundle/ruby/3.1.0/gems/debug-1.10.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250407-46711-1q857y sitelibdir\=./.gem.20250407-46711-1q857y install
+/usr/bin/install -c -m 0755 debug.bundle ./.gem.20250407-46711-1q857y/debug

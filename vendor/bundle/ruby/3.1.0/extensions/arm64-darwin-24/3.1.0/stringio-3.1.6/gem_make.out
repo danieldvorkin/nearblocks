@@ -1,0 +1,16 @@
+current directory: /Users/danieldvorkin/Documents/Personal/nearblocks/vendor/bundle/ruby/3.1.0/gems/stringio-3.1.6/ext/stringio
+/Users/danieldvorkin/.rbenv/versions/3.1.4/bin/ruby -I /Users/danieldvorkin/.rbenv/versions/3.1.4/lib/ruby/3.1.0 extconf.rb
+creating Makefile
+
+current directory: /Users/danieldvorkin/Documents/Personal/nearblocks/vendor/bundle/ruby/3.1.0/gems/stringio-3.1.6/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20250407-46711-omkwuf sitelibdir\=./.gem.20250407-46711-omkwuf clean
+
+current directory: /Users/danieldvorkin/Documents/Personal/nearblocks/vendor/bundle/ruby/3.1.0/gems/stringio-3.1.6/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20250407-46711-omkwuf sitelibdir\=./.gem.20250407-46711-omkwuf
+compiling stringio.c
+linking shared-object stringio.bundle
+ld: warning: ignoring duplicate libraries: '-lruby.3.1'
+
+current directory: /Users/danieldvorkin/Documents/Personal/nearblocks/vendor/bundle/ruby/3.1.0/gems/stringio-3.1.6/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20250407-46711-omkwuf sitelibdir\=./.gem.20250407-46711-omkwuf install
+/usr/bin/install -c -m 0755 stringio.bundle ./.gem.20250407-46711-omkwuf
