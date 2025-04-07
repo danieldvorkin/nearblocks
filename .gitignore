@@ -32,3 +32,4 @@
 
 .env.development
 .env.test
+dump.rdb
