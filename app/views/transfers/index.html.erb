@@ -1,5 +1,12 @@
 <h1>NEAR Blockchain Transfers</h1>
 
+<div>
+  <%= link_to 'All', transfers_path, class: 'btn btn-default' %>
+  <%= link_to 'Transfer', transfers_path(action_type: 'Transfer'), class: 'btn btn-primary' %>
+  <%= link_to 'FunctionCall', transfers_path(action_type: 'FunctionCall'), class: 'btn btn-secondary' %>
+  <%= link_to 'AddKey', transfers_path(action_type: 'AddKey'), class: 'btn btn-success' %>
+</div>
+
 <table>
   <thead>
     <tr>
@@ -23,3 +30,5 @@
     <% end %>
   </tbody>
 </table>
+
+<%= will_paginate @transfers %>
