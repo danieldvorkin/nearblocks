@@ -79,6 +79,43 @@ rails server
 
 3. Open the app in your browser at `http://localhost:3000`.
 
+## API Usage
+
+### Root Route with `action_type` Parameter
+
+The root route of the application accepts an optional `action_type` parameter to customize the data displayed. This parameter can be used to filter or specify the type of blockchain data you want to view.
+
+#### Example Usage
+
+1. **View Recent Transactions**  
+    Append `?action_type=transactions` to the root URL:
+
+    ```
+    http://localhost:3000/?action_type=Transfer
+    ```
+
+    This will display a list of recent transactions on the NEAR blockchain.
+
+2. **View Recent Blocks**  
+    Append `?action_type=blocks` to the root URL:
+
+    ```
+    http://localhost:3000/?action_type=FunctionCall
+    ```
+
+    This will display a list of recent blocks on the NEAR blockchain.
+
+3. **Search for Accounts**  
+    Append `?action_type=accounts` to the root URL:
+
+    ```
+    http://localhost:3000/?action_type=AddKey
+    ```
+
+    This will allow you to search for specific accounts on the NEAR blockchain.
+
+Make sure to replace `localhost:3000` with your deployed application's URL if running in a production environment.
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
