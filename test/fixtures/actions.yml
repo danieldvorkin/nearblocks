@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  transaction: one
+  action_type: MyString
+  args: 
+
+two:
+  transaction: two
+  action_type: MyString
+  args: 

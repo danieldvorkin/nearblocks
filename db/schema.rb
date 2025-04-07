@@ -10,9 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2025_04_07_205944) do
+ActiveRecord::Schema[7.0].define(version: 2025_04_07_210119) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "actions", force: :cascade do |t|
+    t.bigint "transaction_id", null: false
+    t.string "action_type", null: false
+    t.jsonb "args", default: {}
+    t.index ["transaction_id", "action_type"], name: "index_actions_on_transaction_id_and_action_type"
+    t.index ["transaction_id"], name: "index_actions_on_transaction_id"
+  end
 
   create_table "blocks", force: :cascade do |t|
     t.integer "height", null: false
@@ -32,5 +40,6 @@ ActiveRecord::Schema[7.0].define(version: 2025_04_07_205944) do
     t.index ["hash"], name: "index_transactions_on_hash", unique: true
   end
 
+  add_foreign_key "actions", "transactions"
   add_foreign_key "transactions", "blocks"
 end
