@@ -116,6 +116,26 @@ The root route of the application accepts an optional `action_type` parameter to
 
 Make sure to replace `localhost:3000` with your deployed application's URL if running in a production environment.
 
+## Testing
+
+This project uses RSpec for testing. To run the test suite, follow these steps:
+
+1. Run the tests:
+
+```bash
+rspec
+```
+
+### Writing Tests
+
+To add new tests, create files in the `spec` directory following the RSpec conventions. For example:
+
+- Model tests go in `spec/models`
+- Controller tests go in `spec/controllers`
+- Feature tests go in `spec/features`
+
+Refer to the [RSpec documentation](https://rspec.info/documentation/) for more details on writing tests.
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
