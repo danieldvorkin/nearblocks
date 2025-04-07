@@ -76,3 +76,8 @@ gem "dotenv-rails", "~> 3.1", groups: [:development, :test]
 gem "httparty", "~> 0.23.1"
 
 gem "sidekiq", "~> 7.3"
+group :development, :test do
+  gem "rspec-rails", "~> 6.0"
+  gem 'factory_bot_rails', '~> 6.0'    # Optional, for easier test data creation
+  gem 'faker', '~> 2.0'  
+end
