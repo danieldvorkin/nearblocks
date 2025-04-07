@@ -1,0 +1,25 @@
+<h1>NEAR Blockchain Transfers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sender</th>
+      <th>Receiver</th>
+      <th>Deposit</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @transfers.each do |transaction| %>
+      <% transfer_action = transaction.actions %>
+      <% if transfer_action %>
+        <tr>
+          <td><%= transaction.sender %></td>
+          <td><%= transaction.receiver %></td>
+          <td><%= transfer_action.map(&:args) %></td>
+          <td><%= transaction.created_at.strftime('%Y-%m-%d %H:%M:%S') %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>

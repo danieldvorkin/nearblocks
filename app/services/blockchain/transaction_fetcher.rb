@@ -96,11 +96,12 @@ module Blockchain
           end
           
           # Create action with explicit attributes
-          Action.create!(
+          Action.find_or_create_by!(
             transaction_id: transaction.id,
-            action_type: action_type,
-            args: action_data
-          )
+            action_type: action_type
+          ) do |a|
+            a.args = action_data
+          end
         rescue => e
           Rails.logger.error("Failed to create action for txn #{transaction.hash}: #{e.message}")
           Rails.logger.error("Action data: #{action.inspect}")
