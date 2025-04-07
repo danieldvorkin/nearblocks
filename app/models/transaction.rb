@@ -1,7 +1,7 @@
 class Transaction < ApplicationRecord
   belongs_to :block
-  has_many :actions, dependent: :destroy
+  has_many :actions, foreign_key: 'transaction_id', dependent: :destroy
 
   validates :hash, presence: true, uniqueness: true
-  validates :signer_id, :receiver_id, presence: true
+  validates :sender, :receiver, presence: true
 end

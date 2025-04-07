@@ -24,16 +24,16 @@ ActiveRecord::Schema[7.0].define(version: 2025_04_07_210119) do
 
   create_table "blocks", force: :cascade do |t|
     t.integer "height", null: false
-    t.string "block_hash", null: false
+    t.text "block_hash", null: false
     t.datetime "created_at", null: false
     t.index ["block_hash"], name: "index_blocks_on_block_hash", unique: true
     t.index ["height"], name: "index_blocks_on_height", unique: true
   end
 
   create_table "transactions", force: :cascade do |t|
-    t.string "hash", null: false
-    t.string "signer_id", null: false
-    t.string "receiver_id", null: false
+    t.text "hash", null: false
+    t.text "sender", null: false
+    t.text "receiver", null: false
     t.bigint "block_id", null: false
     t.datetime "created_at", null: false
     t.index ["block_id"], name: "index_transactions_on_block_id"
