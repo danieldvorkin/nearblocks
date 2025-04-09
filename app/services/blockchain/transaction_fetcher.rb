@@ -10,6 +10,12 @@ module Blockchain
     end
 
     def fetch_transactions
+      Rails.logger.info "FetchTransactionsJob running at #{Time.now}"
+    
+      # Only proceed if the job hasn't run recently
+      return if Rails.cache.exist?('api_data_fetched') && !force_refresh
+      
+
       response = self.class.get(@api_endpoint, query: { api_key: @api_key }, headers: headers)
       
       if response.success?
@@ -42,6 +48,8 @@ module Blockchain
         result << transaction if transaction
       end
       
+      Rails.logger.info "FetchTransactionsJob completed at #{Time.now}"
+
       result
     end
 

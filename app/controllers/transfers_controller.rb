@@ -1,6 +1,13 @@
 class TransfersController < ApplicationController
   def index
-    FetchTransactionsJob.perform_later
+    # Schedule API sync job if needed
+    if !Rails.cache.exist?('fetch_transactions_job_ran')
+      Rails.logger.info "Scheduling FetchTransactionsJob"
+      FetchTransactionsJob.perform_later
+      Rails.cache.write('fetch_transactions_job_ran', true, expires_in: 1.minute)
+    else
+      Rails.logger.info "FetchTransactionsJob Cached - not running api sync"
+    end
     
     # 1. joins is for filtering: It ensures that the SQL query includes the actions table so that the where condition can be applied.
     # 2. includes is for performance: It preloads the actions association to reduce the number of database queries when accessing actions later.
