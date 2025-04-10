@@ -6,11 +6,41 @@ Got it! Here's a simplified README for a Ruby on Rails app:
 
 NearBlocks is a Ruby on Rails application for interacting with the NEAR Protocol blockchain. It provides a simple interface to view blockchain data and transactions in real time.
 
+Implementation:
+## Service, Caching, and Filtering
+
+### Service Layer
+
+NearBlocks uses a service-oriented architecture to handle interactions with the NEAR Protocol blockchain. The service layer is responsible for:
+
+- Fetching data from the NEAR blockchain API
+- Parsing and transforming the data into a format suitable for the application
+- Handling business logic, such as filtering and sorting transactions or blocks
+
+This separation of concerns ensures that the application remains modular and easy to maintain.
+
+### Caching
+
+To improve performance and reduce the number of API calls to the NEAR blockchain, NearBlocks implements caching mechanisms. Key features of the caching system include:
+
+- **Rails Cache Store**: Frequently accessed data, such as recent blocks and transactions, is cached using Rails' built-in caching system.
+- **Expiration Policies**: Cached data is automatically invalidated after a configurable time period to ensure that users always see up-to-date information.
+
+### Filtering
+
+NearBlocks provides robust filtering capabilities to help users find the data they need. Filters can be applied to:
+
+- **Transaction Action Types**: Users can filter transactions by action types such as `Transfer`, `FunctionCall`, or `AddKey`.
+- **Date Ranges**: Transactions and blocks can be filtered by specific date ranges to narrow down results.
+- **Account and Contract Details**: Users can search for specific accounts or smart contracts to view related transactions and blocks.
+
+These features are implemented using query parameters in the application's API and are processed in the service layer to ensure efficient data retrieval.
+
 ## Features
 
 - View recent blocks and transactions on the NEAR blockchain
-- Search for accounts and smart contracts
-- Real-time data visualization
+- Filter by transaction action type
+- Real-time data visualization with caching
 
 ## Installation
 
