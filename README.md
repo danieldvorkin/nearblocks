@@ -6,6 +6,10 @@ Got it! Here's a simplified README for a Ruby on Rails app:
 
 NearBlocks is a Ruby on Rails application for interacting with the NEAR Protocol blockchain. It provides a simple interface to view blockchain data and transactions in real time.
 
+Current Problems:
+- controller tests and factories are failing when creating a Transaction... not sure why, error claims "TypeError: no implicit conversion of String into Integer" but i checked the types and model configurations....
+
+
 Implementation:
 ## Service, Caching, and Filtering
 
